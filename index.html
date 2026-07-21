@@ -14,61 +14,61 @@
 
 <body>
 
-<div class="background-grid"></div>
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
 
-<div class="overlay"></div>
+<div class="hud-frame">
 
-<div class="main-container">
+<div class="corner tl"></div>
+<div class="corner tr"></div>
+<div class="corner bl"></div>
+<div class="corner br"></div>
 
-    <div class="jarvis-logo">
-        J.A.R.V.I.S.
-    </div>
+<div class="panel">
 
-    <div class="authentication-box">
+<div class="logo">
+J.A.R.V.I.S.
+</div>
 
-        <h1>AUTHENTICATION REQUIRED</h1>
+<div class="sub">
+JUST A RATHER VERY INTELLIGENT SYSTEM
+</div>
 
-        <p class="subtitle">
-            Welcome.
-            Please verify your identity.
-        </p>
+<h1>AUTHENTICATION REQUIRED</h1>
 
-        <form id="loginForm">
+<p class="welcome">
+Welcome. Please verify your identity.
+</p>
 
-            <input
-                type="text"
-                id="username"
-                placeholder="Username"
-                autocomplete="off"
-            >
+<div class="login">
 
-            <input
-                type="password"
-                id="password"
-                placeholder="Password"
-            >
+<input
+type="text"
+placeholder="Username"
+>
 
-            <button id="loginButton">
+<input
+type="password"
+placeholder="Password"
+>
 
-                INITIALIZE
+<button id="startBtn">
+INITIALIZE
+</button>
 
-            </button>
+</div>
 
-        </form>
+<div class="status">
 
-    </div>
+<span>SYSTEM STATUS</span>
 
-    <div class="status-box">
+<p id="statusText">
+Awaiting Authentication...
+</p>
 
-        SYSTEM STATUS
+</div>
 
-        <span id="statusText">
-
-            Awaiting Authentication...
-
-        </span>
-
-    </div>
+</div>
 
 </div>
 
