@@ -4,125 +4,316 @@ padding:0;
 box-sizing:border-box;
 }
 
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:"Segoe UI",sans-serif;
+background:#020814;
+color:#fff;
+}
+
 body{
-height:100vh;
+position:relative;
 display:flex;
 justify-content:center;
 align-items:center;
-overflow:hidden;
-font-family:Arial,Helvetica,sans-serif;
-
-background:
-radial-gradient(circle at top,#123d68 0%,#071726 40%,#02070f 100%);
-color:white;
 }
 
-/* Grid */
+/* ================= BACKGROUND ================= */
 
-body::before{
-content:"";
+.bg-grid{
 position:fixed;
 inset:0;
 
 background-image:
-linear-gradient(rgba(0,180,255,.07) 1px,transparent 1px),
-linear-gradient(90deg,rgba(0,180,255,.07) 1px,transparent 1px);
+linear-gradient(rgba(0,170,255,.05) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,170,255,.05) 1px,transparent 1px);
 
-background-size:50px 50px;
-opacity:.45;
-pointer-events:none;
+background-size:70px 70px;
+
+animation:gridMove 30s linear infinite;
 }
 
-/* Soft Glow */
+@keyframes gridMove{
 
-body::after{
-content:"";
+from{
+background-position:0 0;
+}
+
+to{
+background-position:70px 70px;
+}
+
+}
+
+.bg-glow{
+
 position:fixed;
-width:700px;
-height:700px;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-background:radial-gradient(circle,#00cfff22,transparent 70%);
-filter:blur(40px);
-pointer-events:none;
+inset:0;
+
+background:
+radial-gradient(circle at 50% 18%,
+rgba(0,170,255,.22),
+transparent 45%),
+
+radial-gradient(circle at center,
+rgba(0,120,255,.08),
+transparent 70%),
+
+linear-gradient(#08192c,#020814);
+
 }
 
-.main-container{
+/* ================= FRAME ================= */
+
+.hud-frame{
+
 position:relative;
-z-index:2;
-width:480px;
+
+width:760px;
+
+height:520px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.corner{
+
+position:absolute;
+
+width:48px;
+
+height:48px;
+
+border-color:#18d7ff;
+
+opacity:.8;
+
+}
+
+.tl{
+top:0;
+left:0;
+border-top:2px solid;
+border-left:2px solid;
+}
+
+.tr{
+top:0;
+right:0;
+border-top:2px solid;
+border-right:2px solid;
+}
+
+.bl{
+bottom:0;
+left:0;
+border-bottom:2px solid;
+border-left:2px solid;
+}
+
+.br{
+bottom:0;
+right:0;
+border-bottom:2px solid;
+border-right:2px solid;
+}
+
+/* ================= PANEL ================= */
+
+.panel{
+
+width:520px;
+
 padding:45px;
-text-align:center;
 
-background:rgba(255,255,255,.03);
+background:
+linear-gradient(rgba(255,255,255,.03),
+rgba(255,255,255,.015));
 
-border:1px solid rgba(0,220,255,.25);
+border:1px solid rgba(0,190,255,.18);
 
-backdrop-filter:blur(14px);
+backdrop-filter:blur(18px);
 
 box-shadow:
-0 0 50px rgba(0,180,255,.18),
-inset 0 0 30px rgba(0,180,255,.05);
-}
 
-.jarvis-logo{
+0 0 80px rgba(0,160,255,.08),
+
+inset 0 0 30px rgba(255,255,255,.02);
+
+text-align:center;
+
+}
+/* ================= TEXT ================= */
+
+.logo{
 
 font-size:56px;
-letter-spacing:10px;
-margin-bottom:40px;
 
-color:#00d9ff;
+font-weight:300;
+
+letter-spacing:12px;
+
+color:#29d8ff;
+
+margin-bottom:12px;
 
 text-shadow:
-0 0 12px #00d9ff,
-0 0 40px #0099ff;
+0 0 10px rgba(41,216,255,.9),
+0 0 30px rgba(41,216,255,.45);
+
 }
 
-h2{
+.sub{
 
-font-size:36px;
-margin-bottom:10px;
+font-size:11px;
+
+letter-spacing:4px;
+
+color:#7dcde8;
+
+margin-bottom:40px;
+
+text-transform:uppercase;
+
+opacity:.75;
+
 }
 
-p{
+.panel h1{
 
-color:#b7d7e8;
-margin-bottom:30px;
+font-size:26px;
+
+font-weight:500;
+
+letter-spacing:2px;
+
+margin-bottom:12px;
+
 }
 
-input{
+.welcome{
 
-width:100%;
-padding:14px;
-margin-bottom:15px;
+font-size:15px;
 
-background:rgba(255,255,255,.05);
+color:#9ec7d9;
 
-border:1px solid #00cfff;
+margin-bottom:32px;
+
+}
+
+/* ================= LOGIN ================= */
+
+.login{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.login input{
+
+height:52px;
+
+padding:0 18px;
+
+background:rgba(255,255,255,.035);
+
+border:1px solid rgba(0,190,255,.22);
 
 color:white;
 
+font-size:15px;
+
 outline:none;
+
+transition:.25s;
+
 }
 
-button{
+.login input:focus{
 
-width:100%;
-padding:14px;
+border-color:#29d8ff;
 
-background:#00cfff;
+box-shadow:
+0 0 18px rgba(41,216,255,.18);
+
+}
+
+.login input::placeholder{
+
+color:#7ea8b8;
+
+}
+
+.login button{
+
+height:54px;
 
 border:none;
 
-font-weight:bold;
-
 cursor:pointer;
+
+font-size:14px;
+
+letter-spacing:3px;
+
+font-weight:700;
+
+background:linear-gradient(90deg,#00b4ff,#37e4ff);
+
+color:#00131f;
+
+transition:.25s;
+
 }
+
+.login button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 0 28px rgba(0,190,255,.35);
+
+}
+
+/* ================= STATUS ================= */
 
 .status{
 
-margin-top:20px;
+margin-top:36px;
 
-color:#88dfff;
+padding-top:20px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.status span{
+
+font-size:11px;
+
+letter-spacing:3px;
+
+color:#6fbdd8;
+
+}
+
+.status p{
+
+margin-top:12px;
+
+font-size:15px;
+
+color:#d5edf7;
+
 }
