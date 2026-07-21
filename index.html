@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Surprise</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>J.A.R.V.I.S.</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <h1>Hello ❤️</h1>
+<div class="background-grid"></div>
 
-    <script src="js/main.js"></script>
+<div class="overlay"></div>
+
+<div class="main-container">
+
+    <div class="jarvis-logo">
+        J.A.R.V.I.S.
+    </div>
+
+    <div class="authentication-box">
+
+        <h1>AUTHENTICATION REQUIRED</h1>
+
+        <p class="subtitle">
+            Welcome.
+            Please verify your identity.
+        </p>
+
+        <form id="loginForm">
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                autocomplete="off"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <button id="loginButton">
+
+                INITIALIZE
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="status-box">
+
+        SYSTEM STATUS
+
+        <span id="statusText">
+
+            Awaiting Authentication...
+
+        </span>
+
+    </div>
+
+</div>
+
+<script src="js/main.js"></script>
 
 </body>
+
 </html>
