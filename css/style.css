@@ -1,125 +1,128 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#020712;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+font-family:Arial,Helvetica,sans-serif;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    position:relative;
-
-    color:white;
-
-    background:
-    radial-gradient(circle at center,#10345f 0%,#061321 35%,#020712 70%,#000000 100%);
+background:
+radial-gradient(circle at top,#123d68 0%,#071726 40%,#02070f 100%);
+color:white;
 }
 
-/* Animated Grid */
+/* Grid */
 
-.background-grid{
+body::before{
+content:"";
+position:fixed;
+inset:0;
 
-    position:fixed;
-    inset:0;
+background-image:
+linear-gradient(rgba(0,180,255,.07) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,180,255,.07) 1px,transparent 1px);
 
-    background-image:
-
-    linear-gradient(rgba(0,255,255,.08) 1px,transparent 1px),
-
-    linear-gradient(90deg,rgba(0,255,255,.08) 1px,transparent 1px);
-
-    background-size:45px 45px;
-
-    animation:gridMove 15s linear infinite;
-
-    opacity:.5;
-
+background-size:50px 50px;
+opacity:.45;
+pointer-events:none;
 }
 
-/* Blue Glow */
+/* Soft Glow */
 
-.overlay{
-
-    position:fixed;
-    inset:0;
-
-    background:
-
-    radial-gradient(circle,#00c8ff22 0%,transparent 45%),
-
-    radial-gradient(circle at top,#008cff33 0%,transparent 35%),
-
-    radial-gradient(circle at bottom,#0055ff22 0%,transparent 30%);
-
+body::after{
+content:"";
+position:fixed;
+width:700px;
+height:700px;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+background:radial-gradient(circle,#00cfff22,transparent 70%);
+filter:blur(40px);
+pointer-events:none;
 }
-
-/* Main */
 
 .main-container{
+position:relative;
+z-index:2;
+width:480px;
+padding:45px;
+text-align:center;
 
-    position:relative;
+background:rgba(255,255,255,.03);
 
-    z-index:10;
+border:1px solid rgba(0,220,255,.25);
 
-    width:100%;
+backdrop-filter:blur(14px);
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
+box-shadow:
+0 0 50px rgba(0,180,255,.18),
+inset 0 0 30px rgba(0,180,255,.05);
 }
-
-/* Logo */
 
 .jarvis-logo{
 
-    font-size:58px;
+font-size:56px;
+letter-spacing:10px;
+margin-bottom:40px;
 
-    letter-spacing:12px;
+color:#00d9ff;
 
-    color:#00e5ff;
-
-    text-shadow:
-
-    0 0 8px #00e5ff,
-
-    0 0 25px #00b7ff,
-
-    0 0 60px #0077ff;
-
-    margin-bottom:45px;
-
+text-shadow:
+0 0 12px #00d9ff,
+0 0 40px #0099ff;
 }
 
-/* Animation */
+h2{
 
-@keyframes gridMove{
-
-from{
-
-background-position:0 0;
-
+font-size:36px;
+margin-bottom:10px;
 }
 
-to{
+p{
 
-background-position:45px 45px;
-
+color:#b7d7e8;
+margin-bottom:30px;
 }
 
+input{
+
+width:100%;
+padding:14px;
+margin-bottom:15px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid #00cfff;
+
+color:white;
+
+outline:none;
+}
+
+button{
+
+width:100%;
+padding:14px;
+
+background:#00cfff;
+
+border:none;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+.status{
+
+margin-top:20px;
+
+color:#88dfff;
 }
