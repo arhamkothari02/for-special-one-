@@ -14,61 +14,46 @@
 
 <body>
 
-<div class="bg-grid"></div>
-<div class="bg-glow"></div>
+<div class="background-grid"></div>
+<div class="background-glow"></div>
 
-<div class="hud-frame">
+<div class="main-screen">
 
-<div class="corner tl"></div>
-<div class="corner tr"></div>
-<div class="corner bl"></div>
-<div class="corner br"></div>
+    <div class="camera">
 
-<div class="panel">
+        <div class="camera-lens"></div>
 
-<div class="logo">
-J.A.R.V.I.S.
-</div>
+    </div>
 
-<div class="sub">
-JUST A RATHER VERY INTELLIGENT SYSTEM
-</div>
+    <div class="jarvis-logo">
+        J.A.R.V.I.S.
+    </div>
 
-<h1>AUTHENTICATION REQUIRED</h1>
+    <div class="line"></div>
 
-<p class="welcome">
-Welcome. Please verify your identity.
-</p>
+    <div class="auth-card">
 
-<div class="login">
+        <p class="small-title">
+            SECURITY PROTOCOL
+        </p>
 
-<input
-type="text"
-placeholder="Username"
->
+        <h1>
+            AUTHENTICATION REQUIRED
+        </h1>
 
-<input
-type="password"
-placeholder="Password"
->
+        <p class="subtitle">
+            Initializing identity verification...
+        </p>
 
-<button id="startBtn">
-INITIALIZE
-</button>
+        <button id="startBtn">
+            BEGIN AUTHENTICATION
+        </button>
 
-</div>
+        <div id="status">
+            Awaiting User...
+        </div>
 
-<div class="status">
-
-<span>SYSTEM STATUS</span>
-
-<p id="statusText">
-Awaiting Authentication...
-</p>
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
