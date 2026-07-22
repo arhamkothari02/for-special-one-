@@ -8,72 +8,97 @@ html,body{
 width:100%;
 height:100%;
 overflow:hidden;
-font-family:"Segoe UI",sans-serif;
-background:#020814;
-color:#fff;
+font-family:Segoe UI,Arial,sans-serif;
+background:#020813;
 }
 
 body{
-position:relative;
 display:flex;
 justify-content:center;
 align-items:center;
+position:relative;
+color:white;
 }
 
-/* ================= BACKGROUND ================= */
+/* Background */
 
-.bg-grid{
+.background-grid{
+
 position:fixed;
 inset:0;
 
-background-image:
-linear-gradient(rgba(0,170,255,.05) 1px,transparent 1px),
-linear-gradient(90deg,rgba(0,170,255,.05) 1px,transparent 1px);
+background:
 
-background-size:70px 70px;
+linear-gradient(rgba(0,180,255,.05) 1px,transparent 1px),
 
-animation:gridMove 30s linear infinite;
+linear-gradient(90deg,rgba(0,180,255,.05) 1px,transparent 1px);
+
+background-size:60px 60px;
+
+animation:grid 18s linear infinite;
+
 }
 
-@keyframes gridMove{
+.background-glow{
+
+position:fixed;
+inset:0;
+
+background:
+
+radial-gradient(circle at top,
+rgba(0,180,255,.22),
+transparent 38%),
+
+radial-gradient(circle at center,
+rgba(0,120,255,.08),
+transparent 70%),
+
+linear-gradient(#071523,#020813);
+
+}
+
+@keyframes grid{
 
 from{
 background-position:0 0;
 }
 
 to{
-background-position:70px 70px;
+background-position:60px 60px;
 }
 
 }
 
-.bg-glow{
+/* Main */
 
-position:fixed;
-inset:0;
-
-background:
-radial-gradient(circle at 50% 18%,
-rgba(0,170,255,.22),
-transparent 45%),
-
-radial-gradient(circle at center,
-rgba(0,120,255,.08),
-transparent 70%),
-
-linear-gradient(#08192c,#020814);
-
-}
-
-/* ================= FRAME ================= */
-
-.hud-frame{
+.main-screen{
 
 position:relative;
 
-width:760px;
+z-index:10;
 
-height:520px;
+width:100%;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+/* Camera */
+
+.camera{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:2px solid rgba(0,220,255,.4);
 
 display:flex;
 
@@ -81,239 +106,92 @@ justify-content:center;
 
 align-items:center;
 
-}
-
-.corner{
-
-position:absolute;
-
-width:48px;
-
-height:48px;
-
-border-color:#18d7ff;
-
-opacity:.8;
-
-}
-
-.tl{
-top:0;
-left:0;
-border-top:2px solid;
-border-left:2px solid;
-}
-
-.tr{
-top:0;
-right:0;
-border-top:2px solid;
-border-right:2px solid;
-}
-
-.bl{
-bottom:0;
-left:0;
-border-bottom:2px solid;
-border-left:2px solid;
-}
-
-.br{
-bottom:0;
-right:0;
-border-bottom:2px solid;
-border-right:2px solid;
-}
-
-/* ================= PANEL ================= */
-
-.panel{
-
-width:520px;
-
-padding:45px;
-
-background:
-linear-gradient(rgba(255,255,255,.03),
-rgba(255,255,255,.015));
-
-border:1px solid rgba(0,190,255,.18);
-
-backdrop-filter:blur(18px);
+margin-bottom:35px;
 
 box-shadow:
 
-0 0 80px rgba(0,160,255,.08),
+0 0 30px rgba(0,180,255,.25),
 
-inset 0 0 30px rgba(255,255,255,.02);
-
-text-align:center;
+inset 0 0 25px rgba(0,180,255,.18);
 
 }
-/* ================= TEXT ================= */
 
-.logo{
+.camera-lens{
 
-font-size:56px;
+width:34px;
 
-font-weight:300;
+height:34px;
 
-letter-spacing:12px;
+border-radius:50%;
 
-color:#29d8ff;
+background:#00d7ff;
 
-margin-bottom:12px;
+box-shadow:
+
+0 0 18px #00d7ff,
+
+0 0 40px #00d7ff;
+
+}
+
+/* Logo */
+
+.jarvis-logo{
+
+font-size:72px;
+
+font-weight:200;
+
+letter-spacing:14px;
+
+color:#22dcff;
 
 text-shadow:
-0 0 10px rgba(41,216,255,.9),
-0 0 30px rgba(41,216,255,.45);
+
+0 0 10px #22dcff,
+
+0 0 30px rgba(34,220,255,.6);
+
+margin-bottom:18px;
 
 }
 
-.sub{
+.line{
 
-font-size:11px;
+width:500px;
 
-letter-spacing:4px;
+height:1px;
 
-color:#7dcde8;
+background:
+
+linear-gradient(to right,
+
+transparent,
+
+#22dcff,
+
+transparent);
 
 margin-bottom:40px;
 
-text-transform:uppercase;
-
-opacity:.75;
-
 }
 
-.panel h1{
+.auth-card{
 
-font-size:26px;
+width:560px;
 
-font-weight:500;
+padding:45px;
 
-letter-spacing:2px;
+background:rgba(255,255,255,.03);
 
-margin-bottom:12px;
+border:1px solid rgba(0,220,255,.18);
 
-}
+backdrop-filter:blur(18px);
 
-.welcome{
-
-font-size:15px;
-
-color:#9ec7d9;
-
-margin-bottom:32px;
-
-}
-
-/* ================= LOGIN ================= */
-
-.login{
-
-display:flex;
-
-flex-direction:column;
-
-gap:16px;
-
-}
-
-.login input{
-
-height:52px;
-
-padding:0 18px;
-
-background:rgba(255,255,255,.035);
-
-border:1px solid rgba(0,190,255,.22);
-
-color:white;
-
-font-size:15px;
-
-outline:none;
-
-transition:.25s;
-
-}
-
-.login input:focus{
-
-border-color:#29d8ff;
+text-align:center;
 
 box-shadow:
-0 0 18px rgba(41,216,255,.18);
 
-}
-
-.login input::placeholder{
-
-color:#7ea8b8;
-
-}
-
-.login button{
-
-height:54px;
-
-border:none;
-
-cursor:pointer;
-
-font-size:14px;
-
-letter-spacing:3px;
-
-font-weight:700;
-
-background:linear-gradient(90deg,#00b4ff,#37e4ff);
-
-color:#00131f;
-
-transition:.25s;
-
-}
-
-.login button:hover{
-
-transform:translateY(-2px);
-
-box-shadow:
-0 0 28px rgba(0,190,255,.35);
-
-}
-
-/* ================= STATUS ================= */
-
-.status{
-
-margin-top:36px;
-
-padding-top:20px;
-
-border-top:1px solid rgba(255,255,255,.08);
-
-}
-
-.status span{
-
-font-size:11px;
-
-letter-spacing:3px;
-
-color:#6fbdd8;
-
-}
-
-.status p{
-
-margin-top:12px;
-
-font-size:15px;
-
-color:#d5edf7;
+0 0 60px rgba(0,180,255,.08);
 
 }
