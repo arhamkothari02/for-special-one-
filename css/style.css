@@ -159,17 +159,25 @@ margin-bottom:40px;
 
 .auth-card{
 
-width:560px;
+width:700px;
 
-padding:45px;
+padding:65px 58px;
 
-background:rgba(255,255,255,.03);
+background:rgba(12,26,43,.82);
 
-border:1px solid rgba(0,220,255,.18);
+border:1px solid rgba(0,200,255,.22);
 
 backdrop-filter:blur(18px);
 
+box-shadow:
+0 0 40px rgba(0,180,255,.08),
+inset 0 0 30px rgba(255,255,255,.02);
+
 text-align:center;
+
+position:relative;
+
+overflow:hidden;
 
 box-shadow:
 
