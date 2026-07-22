@@ -220,19 +220,28 @@ color:#98b6c7;
 margin:18px 0 42px;
 
 }
-#startBtn{
+
+  #startBtn{
+
+display:block;
 
 width:100%;
 
 height:64px;
 
+margin:0;
+
+padding:0;
+
 border:none;
+
+outline:none;
 
 cursor:pointer;
 
-background:linear-gradient(90deg,#11bff4,#49d7ff);
+background:linear-gradient(90deg,#12bdf5,#49dbff);
 
-color:#00131d;
+color:#02131d;
 
 font-size:15px;
 
@@ -244,14 +253,15 @@ text-transform:uppercase;
 
 transition:.35s;
 
+box-sizing:border-box;
+
 }
 
 #startBtn:hover{
 
-transform:translateY(-3px);
+transform:translateY(-2px);
 
-box-shadow:
-0 0 28px rgba(40,220,255,.45);
+box-shadow:0 0 30px rgba(45,220,255,.45);
 
 }
   
